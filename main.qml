@@ -26,15 +26,29 @@ Rectangle {
         }
     }
 
-    Action {
-        id: actionOne
-        text: "go 1"
-        onTriggered: theOne.triggered()
-    }
-    Action {
-        id: actionTwo
-        text: "go 2"
-        onTriggered: theTwo.triggered()
+    ExclusiveGroup {
+        Action {
+            id: actionOne
+            objectName: "actionOne"
+            checkable: true
+            text: "Go 1"
+            onTriggered: theOne.trigger()
+            onCheckedChanged: {
+                if (checked === true)
+                    bigText.text = text;
+            }
+        }
+        Action {
+            id: actionTwo
+            objectName: "actionTwo"
+            checkable: true
+            text: "Go 2"
+            onTriggered: theTwo.trigger()
+            onCheckedChanged: {
+                if (checked === true)
+                    bigText.text = text;
+            }
+        }
     }
 
     ColumnLayout {

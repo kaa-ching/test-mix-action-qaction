@@ -6,6 +6,8 @@
 
 QT       += core gui quick quickwidgets widgets
 
+CONFIG += c++11
+
 TARGET = tbe-test-mix-action-qaction
 TEMPLATE = app
 

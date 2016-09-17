@@ -3,6 +3,7 @@
 
 #include <QActionGroup>
 #include <QMainWindow>
+#include <QQuickItem>
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,9 @@ private:
     QActionGroup theGameButtonGroup;
     QAction* theOne;
     QAction* theTwo;
+
+    QObject* theActionOnePtr;
+    QObject* theActionTwoPtr;
 };
 
 #endif // MAINWINDOW_H
